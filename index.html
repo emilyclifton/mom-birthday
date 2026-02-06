@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mom!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start screen - click to begin and play music -->
+    <div class="start-screen" id="startScreen">
+        <div class="start-content">
+            <h1>Happy Birthday Mom!</h1>
+            <p>A special surprise awaits you...</p>
+            <button class="start-button" id="startButton">Click to Begin</button>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <!-- Title -->
+        <h1 class="title">Happy Birthday Mom!</h1>
+        <p class="subtitle">Find all 6 hidden cats in the garden!</p>
+        
+        <!-- Progress indicator -->
+        <div class="progress">
+            <span class="found-count">0</span> / 6 cats found
+        </div>
+
+        <!-- Garden Scene -->
+        <div class="garden">
+            <!-- Background image -->
+            <img src="assets/garden-background.png" alt="Garden background" class="background">
+            
+            <!-- Background decorative elements -->
+            <img src="assets/cherry-blossom-tree.png" alt="Cherry blossom tree" class="scenery tree" id="tree-left">
+            <img src="assets/cherry-blossom-tree.png" alt="Cherry blossom tree" class="scenery tree" id="tree-right">
+            <img src="assets/flower-bush.png" alt="Flower bush" class="scenery background-decor" id="flower-bush-decor">
+            
+            <!-- Bush 1: Hydrangea with Cat 1 (angry) -->
+            <div class="cat" data-cat="1" data-message="Still mad about that bath last week">
+                <img src="assets/angry-cat.png" alt="Angry cat" class="cat-img">
+            </div>
+            <img src="assets/hydra-bush.png" alt="Hydrangea bush" class="scenery bush" id="hydra-bush" data-reveals="1">
+            
+            <!-- Bush 2: Rose bush with Cat 2 (sleepy) -->
+            <div class="cat" data-cat="2" data-message="Your favorite sun spot buddy">
+                <img src="assets/sleepy-cat.png" alt="Sleepy cat" class="cat-img">
+            </div>
+            <img src="assets/rose-bush.png" alt="Rose bush" class="scenery bush" id="rose-bush" data-reveals="2">
+            
+            <!-- Bush 3: Flower bush left with Cat 3 (loving) -->
+            <div class="cat" data-cat="3" data-message="We love you so much">
+                <img src="assets/loving-cat.png" alt="Loving cat" class="cat-img">
+            </div>
+            <img src="assets/flower-bush.png" alt="Flower bush" class="scenery bush" id="flower-bush-left" data-reveals="3">
+            
+            <!-- Bush 4: Flower bush center with Cat 4 (laughing) -->
+            <div class="cat" data-cat="4" data-message="You always make us smile">
+                <img src="assets/laughing-cat.png" alt="Laughing cat" class="cat-img">
+            </div>
+            <img src="assets/hydra-bush.png" alt="Hydrangea bush" class="scenery bush" id="hydra-bush-center" data-reveals="4">
+            
+            <!-- Bush 5: Flower bush back with Cat 5 (good job) -->
+            <div class="cat" data-cat="5" data-message="You're doing amazing, Mom!">
+                <img src="assets/good-job-cat.png" alt="Good job cat" class="cat-img">
+            </div>
+            <img src="assets/flower-bush.png" alt="Flower bush" class="scenery bush" id="flower-bush-back" data-reveals="5">
+            
+            <!-- Bush 6: Rose bush front with Cat 6 (celebration) -->
+            <div class="cat" data-cat="6" data-message="Party time with you is the best!">
+                <img src="assets/celebration-cat.png" alt="Celebration cat" class="cat-img">
+            </div>
+            <img src="assets/rose-bush.png" alt="Rose bush" class="scenery bush" id="rose-bush-front" data-reveals="6">
+            
+            <!-- Decorative bush (right side, no cat) -->
+            <img src="assets/flower-bush.png" alt="Flower bush" class="scenery background-decor" id="flower-bush-right">
+        </div>
+        
+        <!-- Caption popup -->
+        <div class="caption" id="caption">
+            <p class="caption-text"></p>
+        </div>
+        
+        <!-- Background music -->
+        <audio id="bgMusic" loop>
+            <source src="happy-birthday.mp3" type="audio/mpeg">
+        </audio>
+        
+        <!-- Music toggle button -->
+        <button class="music-toggle" id="musicToggle" title="Toggle music">
+            🔊
+        </button>
+        
+        <!-- End screen -->
+        <div class="end-screen" id="endScreen">
+            <div class="end-content">
+                <h2>You found them all!</h2>
+                <p class="end-message">Just like you always find us when we need you.</p>
+                <p class="end-birthday">Happy Birthday, Mom!</p>
+                <div class="hearts">
+                    <span class="heart">❤</span>
+                    <span class="heart">❤</span>
+                    <span class="heart">❤</span>
+                </div>
+                <p class="secret-message">I love you so much! A beautiful gift is on its way!</p>
+            </div>
+            <div class="confetti" id="confetti"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
